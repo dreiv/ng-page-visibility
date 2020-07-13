@@ -10,18 +10,18 @@ import { scan } from 'rxjs/operators';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  notifications$: Observable<string[]>;
+  notifications$: Observable<number[]>;
 
   constructor(private notificationService: NotificationsService) {
     this.notifications$ = notificationService.notifications$.pipe(
       scan(
-        (acc: string[], val: string): string[] => [...acc, val],
-        [] as string[]
+        (acc: number[], val: number): number[] => [...acc, val],
+        [] as number[]
       )
     );
   }
 
-  trackByFn(index: number, item: string): string {
+  trackByFn(index: number, item: number): number {
     return item;
   }
 }
