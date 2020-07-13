@@ -1,5 +1,5 @@
 <h1>Notifications</h1>
-<p>will reset when page is not visible</p>
+<p>will pause when page is not visible</p>
 
 <ul *ngIf="notifications$ | async as notifications">
   <li *ngFor="let notification of notifications; trackBy: trackByFn">

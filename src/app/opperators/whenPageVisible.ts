@@ -11,10 +11,9 @@ export function whenPageVisible() {
     () => document.visibilityState === 'visible'
   );
 
-  return function <T>(source: Observable<T>) {
-    return source.pipe(
+  return <T>(source: Observable<T>) =>
+    source.pipe(
       takeUntil(pageHidden$),
       repeatWhen(() => pageVisible$)
     );
-  };
 }

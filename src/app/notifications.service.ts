@@ -13,8 +13,8 @@ export class NotificationsService {
   constructor() {
     this.notifications$ = of(1).pipe(
       poll(1000),
-      scan((acc, val) => acc + val, 0),
-      whenPageVisible()
+      whenPageVisible(),
+      scan((acc, val) => acc + val, 0)
     );
   }
 }
