@@ -1,1 +1,8 @@
-<h1>hello world!</h1>
+<h1>Notifications</h1>
+<p>will pause when page is not visible</p>
+
+<ul *ngIf="notifications$ | async as notifications">
+  <li *ngFor="let notification of notifications; trackBy: trackByFn">
+    {{ notification }}
+  </li>
+</ul>
