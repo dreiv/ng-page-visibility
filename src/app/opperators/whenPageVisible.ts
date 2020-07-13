@@ -1,4 +1,4 @@
-import { partition, fromEvent } from 'rxjs';
+import { partition, fromEvent, Observable } from 'rxjs';
 import { shareReplay, takeUntil, repeatWhen } from 'rxjs/operators';
 
 export function whenPageVisible() {
